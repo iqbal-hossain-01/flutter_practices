@@ -9,14 +9,32 @@ class HomeScreen extends StatelessWidget {
       // <---- APP BAR ---->
       appBar: AppBar(
         title: const Text(
-          "Scaffold App",
+          //"Scaffold App",
+          "Dashboard",
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24,
+            fontWeight: FontWeight.w600,
+            fontSize: 22,
           ),
         ),
-        centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+
+        actions: [
+          IconButton(
+            onPressed: () {
+              // Search action
+            },
+            icon: const Icon(Icons.search),
+          ),
+          IconButton(
+            onPressed: () {
+              // Notifications action
+            },
+            icon: const Icon(Icons.notifications),
+          ),
+        ],
+
+        // centerTitle: true,
+        //backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.teal,
       ),
 
       // <---- DRAWER ---->
