@@ -7,23 +7,30 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Fashion",
+        title: const TextField(
+          decoration: InputDecoration(
+            hintText: "Search...",
+            hintStyle: TextStyle(
+              color: Colors.white70,
+            ),
+            border: InputBorder.none,
+          ),
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 24.0,
             color: Colors.white,
           ),
         ),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-            colors: [Colors.pink, Colors.orange],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          )),
-        ),
-        elevation: 0,
+        backgroundColor: Colors.green,
+        actions: [
+          IconButton(
+            onPressed: () {
+              // Filter action
+            },
+            icon: const Icon(
+              Icons.filter_list,
+              color: Colors.white,
+            ),
+          ),
+        ],
       ),
     );
   }
