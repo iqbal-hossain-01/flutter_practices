@@ -8,7 +8,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // <---- APP BAR ---->
       appBar: AppBar(
-        title: const Text("Scaffold App"),
+        title: const Text(
+          "Scaffold App",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 24,
+          ),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blueAccent,
       ),
 
       // <---- DRAWER ---->
