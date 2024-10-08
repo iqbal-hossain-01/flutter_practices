@@ -8,43 +8,17 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // <---- APP BAR ---->
       appBar: AppBar(
-        title: const Row(
-          children: [
-            CircleAvatar(
-              backgroundImage: NetworkImage('https://example.com/profile.jpg'),
-            ),
-            SizedBox(
-              width: 10.0,
-            ),
-            Text(
-              "Iqbal Hossain",
-              style: TextStyle(
-                fontSize: 20,
-              ),
-            ),
-          ],
+        title: const Text(
+          "Explore",
+          style: TextStyle(
+            fontSize: 22.0,
+            color: Colors.white,
+          ),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              // Call action
-            },
-             icon: const Icon(Icons.call),
-          ),
-          IconButton(
-            onPressed: () {
-              // VideoCall action
-            },
-             icon: const Icon(Icons.video_call),
-          ),
-          IconButton(
-            onPressed: () {
-              // More options
-            },
-            icon: const Icon(Icons.more_vert),
-          ),
-        ],
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.black.withOpacity(0.6),
+        elevation: 5.0,
+        shadowColor: Colors.grey,
+        centerTitle: true,
       ),
 
       // <---- DRAWER ---->
