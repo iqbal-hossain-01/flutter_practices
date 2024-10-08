@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice_by_flutter_docs/pages/my_animated_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -7,18 +6,29 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          const MyAnimatedAppBar(),
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return ListTile(
-                  title: Text("Item #$index"),
-                );
-              },
-              childCount: 20,
+      appBar: AppBar(
+        title: const Row(
+          children: [
+            CircleAvatar(
+              child: Icon(Icons.person),
             ),
+            SizedBox(width: 10),
+            Text(
+              'Brand Name',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        backgroundColor: Colors.blueGrey,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.shopping_cart),
+            onPressed: () {
+              // Cart action
+            },
           ),
         ],
       ),
