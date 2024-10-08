@@ -5,43 +5,61 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // <---- APP BAR ---->
-      appBar: AppBar(
-        title: const Text(
-          "Explore",
-          style: TextStyle(
-            fontSize: 22.0,
-            color: Colors.white,
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Categories"),
+          actions: [
+            IconButton(
+              onPressed: () {
+                // Search Action
+              },
+              icon: const Icon(Icons.search),
+            ),
+            IconButton(
+              onPressed: () {
+                // Vert Action
+              },
+              icon: const Icon(Icons.more_vert),
+            ),
+          ],
+          bottom: const TabBar(
+            tabs: [
+              Tab(
+                text: "Home",
+              ),
+              Tab(
+                text: "Trending",
+              ),
+              Tab(
+                text: "Favorites",
+              ),
+            ],
           ),
+          backgroundColor: Colors.redAccent,
         ),
-        backgroundColor: Colors.black.withOpacity(0.6),
-        elevation: 5.0,
-        shadowColor: Colors.grey,
-        centerTitle: true,
-      ),
-
-      // <---- DRAWER ---->
-      drawer: const Drawer(),
-
-      // <---- BODY PART ---->
-      body: const Center(
-        child: Text("Assalamu Alaikum"),
-      ),
-
-      // <---- FlotingActionButton ---->
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Do something
-        },
-        child: const Icon(Icons.add),
-      ),
-
-      // <---- BOTTOM BAR ---->
-      bottomNavigationBar: const BottomAppBar(
-        child: Padding(
-          padding: EdgeInsets.all(16.0),
-          child: Text("Bottom Navigation Bar"),
+        drawer: const Drawer(),
+        body: TabBarView(
+          children: [
+            const Center(
+              child: Text(
+                "Home Content",
+              ),
+            ),
+            const Center(
+              child: Text(
+                "Trending Content",
+              ),
+            ),
+          
+            Scaffold(
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {},
+                  child: const Icon(Icons.add),
+                ),
+              ),
+          ],
         ),
       ),
     );
