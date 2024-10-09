@@ -12,8 +12,8 @@ class DetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Detail of $items",
+        title: const Text(
+          "Details This News",
         ),
       ),
 

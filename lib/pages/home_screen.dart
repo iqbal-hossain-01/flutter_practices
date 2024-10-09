@@ -111,11 +111,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
 
         // <---- app body ---->
-        body: TabBarView(
+        body: const TabBarView(
           children: [
-            HomeTab(items: items),
-            const TrendingTab(),
-            const FavoritesTab(),
+            HomeTab(),
+            TrendingTab(),
+            FavoritesTab(),
           ],
         ),
       ),
