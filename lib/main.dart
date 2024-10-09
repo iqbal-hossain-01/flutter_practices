@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_by_flutter_docs/pages/home_screen.dart';
+import 'package:flutter_practice_by_flutter_docs/providers/theme_provider.dart';
+import 'package:flutter_practice_by_flutter_docs/themes/dark_theme.dart';
+import 'package:flutter_practice_by_flutter_docs/themes/light_theme.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,18 +19,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
       title: "Beautiful AppBar with Tabs",
 
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-      ),
+      themeMode: themeProvider.themeMode, // Use theme mode from provider
 
+      theme: lightTheme,
+      darkTheme: darkTheme,
       home: const HomeScreen(),
-
-
     );
   }
 }

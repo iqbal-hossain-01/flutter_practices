@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_by_flutter_docs/providers/theme_provider.dart';
 import 'package:flutter_practice_by_flutter_docs/utils/favorites_tab.dart';
 import 'package:flutter_practice_by_flutter_docs/utils/home_tab.dart';
 import 'package:flutter_practice_by_flutter_docs/utils/trending_tab.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     final List<String> items = List.generate(
       20,
       (index) => "Item ${index + 1}",
@@ -22,9 +25,17 @@ class HomeScreen extends StatelessWidget {
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
-              color: Colors.white,
+              //color: Colors.white,
             ),
           ),
+          actions: [
+            Switch(
+              value: themeProvider.isDarkMode,
+              onChanged: (value) {
+                themeProvider.toggleTheme(value);
+              },
+            ),
+          ],
           flexibleSpace: Container(
             decoration: const BoxDecoration(
               gradient: LinearGradient(
