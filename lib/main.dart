@@ -10,10 +10,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
 
-      home: HomeScreen(),
+      title: "Beautiful AppBar with Tabs",
+
+      theme: ThemeData(
+        primarySwatch: Colors.indigo,
+      ),
+
+      home: const HomeScreen(),
 
 
     );
