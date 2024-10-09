@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_by_flutter_docs/utils/favorites_tab.dart';
+import 'package:flutter_practice_by_flutter_docs/utils/home_tab.dart';
+import 'package:flutter_practice_by_flutter_docs/utils/trending_tab.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final List<String> items = List.generate(
+      20,
+      (index) => "Item ${index + 1}",
+    );
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -78,35 +86,12 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
 
-
-
         // <---- app body ---->
-        body: const TabBarView(
+        body: TabBarView(
           children: [
-            Center(
-              child: Text(
-                "Home Content",
-                style: TextStyle(
-                  fontSize: 20.0
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                "Trending Content",
-                style: TextStyle(
-                  fontSize: 20.0
-                ),
-              ),
-            ),
-            Center(
-              child: Text(
-                "Favorites Content",
-                style: TextStyle(
-                  fontSize: 20.0
-                ),
-              ),
-            ),
+            HomeTab(items: items),
+            const TrendingTab(),
+            const FavoritesTab(),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_by_flutter_docs/pages/detail_page.dart';
 
 class HomeTab extends StatelessWidget {
   final List<String> items;
@@ -18,6 +19,14 @@ class HomeTab extends StatelessWidget {
           title: Text(
             items[index],
           ),
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DetailPage(items: items[index]),
+              ),
+            );
+          },
         );
       },
     );
