@@ -49,7 +49,7 @@ class _HomeTabState extends State<HomeTab> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => DetailPage(items: articles[index]['title'])
+                      builder: (context) => DetailPage(article: articles[index])
                     ),
                   );
                 },

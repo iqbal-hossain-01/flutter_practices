@@ -24,17 +24,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
-    final List<String> items = List.generate(
-      20,
-      (index) => "Item ${index + 1}",
-    );
 
     return DefaultTabController(
       length: 3,
       child: Scaffold(
         appBar: AppBar(
           title: const Text(
-            "My Custom App",
+            "AB neUSE",
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
