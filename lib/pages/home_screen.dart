@@ -5,9 +5,22 @@ import 'package:flutter_practice_by_flutter_docs/utils/home_tab.dart';
 import 'package:flutter_practice_by_flutter_docs/utils/trending_tab.dart';
 import 'package:provider/provider.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late ThemeProvider themeProvider;
+
+  @override
+  void initState() {
+    super.initState();
+    themeProvider = Provider.of<ThemeProvider>(context, listen: false);
+    themeProvider.loadTheme();
+  }
   @override
   Widget build(BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);

@@ -5,7 +5,10 @@ import 'package:flutter_practice_by_flutter_docs/themes/dark_theme.dart';
 import 'package:flutter_practice_by_flutter_docs/themes/light_theme.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final themeProvider = ThemeProvider();
+  await themeProvider.loadTheme(); // Load theme on app start
   runApp(
     ChangeNotifierProvider(
       create: (context) => ThemeProvider(),
